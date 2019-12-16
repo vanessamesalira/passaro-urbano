@@ -11,12 +11,18 @@ export class OfertasService {
 
     public getOfertas(): Promise<Oferta[]>{
         //efetuar uma requisição http
-        return this.http.get('http://localhost:3000/ofertas')
+        return this.http.get('http://localhost:3000/ofertas?destaque=true')
         //Retorna um observable porém agora estamos utilizando uma promise, por isso foi feita a correção.
         .toPromise()        
         //Recuperar o parâmetro resolvido
         .then((resposta: any) => resposta)
         //retorna a promise <Oferta[]>
         return 
+    }
+
+    public getOfertasPorCategoria(categoria: string): Promise<Oferta[]>{
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        .toPromise()
+        .then((resposta: any) => resposta)
     }
 }
