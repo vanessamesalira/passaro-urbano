@@ -2,6 +2,9 @@ import { Oferta } from '../models/ofertas.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { URL_API } from 'src/app/app.api';
+import { Observable} from 'rxjs';
+
+import { map, retry } from 'rxjs/operators';
 
 @Injectable()
 //Essa função permite que nosso serviço receba injeções de outros serviços no caso o HTTP
@@ -35,12 +38,26 @@ export class OfertasService {
         })
     }
 
-    public getComoUsarOfertaPorID(id: number): Promise <Oferta>{
+    public getComoUsarOfertaPorID(id: number): Promise<string>{
         return this.http.get(`${URL_API}/como-usar?id=${id}`)
         .toPromise()
         .then((resposta:any) =>{
-            console.log(resposta)
-            return resposta
+            return resposta[0].descricao
         })
+    }
+
+    public getOndeFicaOfertaPorID(id: number): Promise<string>{
+        return this.http.get(`${URL_API}/onde-fica?id=${id}`)
+        .toPromise()
+        .then((resposta:any) =>{
+            return resposta[0].descricao
+        })
+    }
+
+    public pesquisaOfertas(termo: string): Observable<Oferta[]>{
+        return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`)
+        //_like pesquisa por coisas semelhantes, ou seja, por aproximaçãos
+        
+        .pipe(map((resposta: any)=> resposta), retry(10))
     }
 }

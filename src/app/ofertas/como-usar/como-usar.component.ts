@@ -10,6 +10,8 @@ import { OfertasService } from '../../shared/services/ofertas.service';
 })
 export class ComoUsarComponent implements OnInit {
 
+  public comoUsar: string = ''
+
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService
@@ -20,8 +22,8 @@ export class ComoUsarComponent implements OnInit {
     //Recuperando parâmetros da rota pai.
 
     this,this.ofertasService.getComoUsarOfertaPorID(this.route.parent.snapshot.params['id'])
-    .then((resposta:any) =>{
-        console.log(resposta)
+    .then((descricao: string) => {
+      this.comoUsar = descricao
     })
   }
 
