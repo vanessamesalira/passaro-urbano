@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
  
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,15 @@ import { OfertasComponent } from './ofertas/ofertas.component';
 import { ComoUsarComponent } from './ofertas/como-usar/como-usar.component';
 import { OndeFicaComponent } from './ofertas/onde-fica/onde-fica.component';
 
+//pipe
+import { DescricaoReduzida } from './shared/pipes/descricao-reduzida.pipe';
+
+import { registerLocaleData } from '@angular/common';
+import localePt from "@angular/common/locales/pt";
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +32,19 @@ import { OndeFicaComponent } from './ofertas/onde-fica/onde-fica.component';
     DiversaoComponent,
     OfertasComponent,
     ComoUsarComponent,
-    OndeFicaComponent
+    OndeFicaComponent,
+    DescricaoReduzida,
+    OrdemCompraComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{provide:LOCALE_ID, useValue:'pt-PT'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+registerLocaleData(localePt);

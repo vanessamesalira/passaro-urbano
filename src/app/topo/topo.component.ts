@@ -14,7 +14,6 @@ import { switchMap, debounceTime, distinctUntilChanged, catchError } from 'rxjs/
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>
-  public ofertas2: Oferta[]
   private subjectPesquisa: Subject<string> = new Subject<string>()
 
   constructor(private ofertasService: OfertasService) { }
@@ -25,7 +24,6 @@ export class TopoComponent implements OnInit {
         debounceTime(1000), //executa a função após 1 segundo (1000 milisegundos)
         distinctUntilChanged(), //fazer apenas pesquisas distintas
         switchMap((termo: string) => {
-          console.log('requisicao http para api')
 
           if (termo.trim() === '') {
             //retornar um observable de array de ofertas vazio
@@ -35,19 +33,12 @@ export class TopoComponent implements OnInit {
           return this.ofertasService.pesquisaOfertas(termo);
         }),
         catchError ((erro)=> {
-          console.log(erro)
           return of([])
         })
         )
-        
-    this.ofertas.subscribe((ofertas: Oferta[]) => {
-      console.log(ofertas)
-      this.ofertas2 = ofertas
-    })
   }
 
   public pesquisa(termoDaBusca: string): void {
-    console.log('keyup caracter: ', termoDaBusca)
     //console.log((<HTMLInputElement>event.target).value)
     //Exemplo de uma forma de capturar o texto que será digitado no Input
     //console.log(termoDaBusca)
@@ -62,8 +53,10 @@ export class TopoComponent implements OnInit {
 
     //Usando subject e Swicth Map
     this.subjectPesquisa.next(termoDaBusca)
+  }
 
-
+  public limpaPesquisa(): void{
+    this.subjectPesquisa.next("")
   }
 
 }

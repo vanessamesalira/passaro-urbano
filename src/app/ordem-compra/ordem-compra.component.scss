@@ -1,0 +1,32 @@
+.ordem-compra {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+ input.ng-invalid.ng-touched {
+     border: 1px solid red;
+ }
+ 
+ select.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+
+input.ng-valid.ng-touched {
+    border: 1px solid green;
+}
+
+select.ng-valid.ng-touched {
+   border: 1px solid green;
+}

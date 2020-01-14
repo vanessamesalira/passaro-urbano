@@ -11,6 +11,8 @@ import { OfertasService } from '../shared/services/ofertas.service';
 export class RestaurantesComponent implements OnInit {
   
   public ofertas: Oferta[]
+  // public dataTeste: any = new Date(2017,8,30) Criado para demonstrar o Pipe Date
+  //importante lembrar que no objeto Date o mês de janeiro corresponde a 0 e assim por diante.
 
   constructor(private ofertasService: OfertasService) { }
 
