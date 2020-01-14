@@ -3,12 +3,13 @@ import { OrdemCompraService } from '../shared/services/ordem-compra.service'
 import { Pedido } from '../shared/models/pedido.model'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CarrinhoService } from '../shared/services/carrinho.service';
+import { ItemCarrinho } from '../shared/models/item-carrinho.model';
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
   styleUrls: ['./ordem-compra.component.scss'],
-  providers: [ OrdemCompraService, CarrinhoService ]
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
 
@@ -25,9 +26,11 @@ export class OrdemCompraComponent implements OnInit {
     ) { }
 
     public idPedidoCompra: number
+    public itensCarrinho: ItemCarrinho[] = []
 
   ngOnInit() {
-    console.log("Array de itens no carrinho: ", this.carrinhoService.exibirItens())
+    this.itensCarrinho = this.carrinhoService.exibirItens()
+    console.log(this.itensCarrinho)
   }
 
   public confirmarCompra(): void {

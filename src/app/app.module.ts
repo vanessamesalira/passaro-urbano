@@ -22,6 +22,7 @@ import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarrinhoService } from './shared/services/carrinho.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [{provide:LOCALE_ID, useValue:'pt-PT'}],
+  providers: [{provide:LOCALE_ID, useValue:'pt-PT'}, CarrinhoService],
+  // Nós também poderíamos declarar o provider da seguinte forma:
+  // {provide:CarrinhoService, useValue:'CarrinhoService'}
   bootstrap: [AppComponent]
 })
 export class AppModule { }

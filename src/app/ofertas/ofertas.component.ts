@@ -10,7 +10,7 @@ import { CarrinhoService } from '../shared/services/carrinho.service';
   selector: 'pu-ofertas',
   templateUrl: './ofertas.component.html',
   styleUrls: ['./ofertas.component.scss'],
-  providers: [OfertasService, CarrinhoService]
+  providers: [OfertasService]
 })
 export class OfertasComponent implements OnInit {
 
@@ -74,6 +74,11 @@ export class OfertasComponent implements OnInit {
 
     console.log("Array de itens no carrinho: ", this.carrinhoService.exibirItens())
 
+  }
+
+  public adicionarItemCarrinho(oferta: Oferta): void{
+    this.carrinhoService.incluirItem(oferta)
+    console.log(this.carrinhoService.exibirItens())
   }
 
 }
