@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Running fake API
-Run `json-server src/app/banco_de_dados.json --watch` in a second terminal,
+Run `json-server src/app/banco_de_dados.json --watch` in a second terminal.
 
 ## Development server
 
