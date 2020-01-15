@@ -187,88 +187,62 @@
   ],
   "pedidos": [
     {
-      "endereco": "hjhgj",
-      "numero": "5",
-      "complemento": "5",
+      "endereco": "Rua z",
+      "numero": "19dfsf",
+      "complemento": "dfsdf",
       "formaPagamento": "dinheiro",
-      "id": 1
+      "itens": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricao_oferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 2
+        },
+        {
+          "id": 5,
+          "img": {
+            "url": "/assets/ofertas/5/img1.jpg"
+          },
+          "titulo": "Kart",
+          "descricao_oferta": "Bateria de Kart de 30 minutos.",
+          "valor": 54.9,
+          "quantidade": 1
+        },
+        {
+          "id": 3,
+          "img": {
+            "url": "/assets/ofertas/3/img1.jpg"
+          },
+          "titulo": "Pizzas Grandes",
+          "descricao_oferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
+          "valor": 21.9,
+          "quantidade": 1
+        }
+      ],
+      "id": 14
     },
     {
-      "endereco": "hjhgjfdfg",
-      "numero": "5",
-      "complemento": "5",
+      "endereco": "fghfg",
+      "numero": "ghhgfhhfgh",
+      "complemento": "gfhfgh",
       "formaPagamento": "dinheiro",
-      "id": 2
-    },
-    {
-      "endereco": "vanessa",
-      "numero": "5",
-      "complemento": "5",
-      "formaPagamento": "dinheiro",
-      "id": 3
-    },
-    {
-      "endereco": "fdgfdg",
-      "numero": "56456",
-      "complemento": "fg hfg",
-      "formaPagamento": "debito",
-      "id": 4
-    },
-    {
-      "endereco": "fdgfdg",
-      "numero": "56456",
-      "complemento": "fg hfg",
-      "formaPagamento": "debito",
-      "id": 5
-    },
-    {
-      "endereco": "gfdgd",
-      "numero": "54",
-      "complemento": "4r5",
-      "formaPagamento": "dinheiro",
-      "id": 6
-    },
-    {
-      "endereco": "ruazbgfh",
-      "numero": "5646",
-      "complemento": "56",
-      "formaPagamento": "dinheiro",
-      "id": 7
-    },
-    {
-      "endereco": "tyrty",
-      "numero": "trr",
-      "complemento": "retre",
-      "formaPagamento": "dinheiro",
-      "id": 8
-    },
-    {
-      "endereco": "tyrty",
-      "numero": "trr",
-      "complemento": "retre",
-      "formaPagamento": "dinheiro",
-      "id": 9
-    },
-    {
-      "endereco": "ffter6y",
-      "numero": "tyu",
-      "complemento": null,
-      "formaPagamento": "dinheiro",
-      "id": 10
-    },
-    {
-      "endereco": "hgfhty",
-      "numero": "yuyu",
-      "complemento": "yutyu",
-      "formaPagamento": "dinheiro",
-      "id": 11
-    },
-    {
-      "endereco": "Av José Palla",
-      "numero": "12",
-      "complemento": "JPOIJ",
-      "formaPagamento": "dinheiro",
-      "id": 12
+      "itensCarrinho": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricao_oferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 1
+        }
+      ],
+      "id": 15
     }
   ]
 }
